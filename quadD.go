@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func QuadD(x, y int) {
+	height := y
+	width := x
+
+	if height <= 0 || width <= 0 {
+		fmt.Println("Error: Height or width of QuadD have a negative number or zero as input and is therefore invalid.")
+	} else {
+
+		for h := 1; h <= height; h++ {
+			for w := 1; w <= width; w++ {
+				if h >= 2 && h < height && w == 1 || h >= 2 && h < height && w == width {
+					fmt.Print("B")
+				} else if w == 1 {
+					fmt.Print("A")
+				} else if w == width {
+					fmt.Print("C")
+				} else if h == 1 || h == height {
+					fmt.Print("B")
+				} else {
+					fmt.Print(" ")
+				}
+			}
+			fmt.Println()
+
+		}
+	}
+	fmt.Println()
+}
